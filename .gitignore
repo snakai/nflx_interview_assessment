@@ -48,6 +48,10 @@ coverage.xml
 .pytest_cache/
 
 # Secrets
+credentials.json
+service_account.json
+drive.json
+token.json
 
 # Translations
 *.mo

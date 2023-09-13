@@ -21,30 +21,30 @@ SCOPES=['https://www.googleapis.com/auth/drive']
 PORT=8000
 
 
-def initialize_service_account(cred_file, service):
+# def initialize_service_account(cred_file, service):
 
-    match service:
-        case "drive":
-            scope_list = ['https://www.googleapis.com/auth/drive']
-            version = 'v3'
-            service_name = 'drive'
-        case "sheets":
-            scope_list = ['https://www.googleapis.com/auth/spreadsheets']
-            version = 'v3'
-            service_name = 'spreadsheets'
-        case _:
-            scope_list = ['https://www.googleapis.com/auth/drive']
-            version = 'v3'
-            service_name = 'drive'
+#     match service:
+#         case "drive":
+#             scope_list = ['https://www.googleapis.com/auth/drive']
+#             version = 'v3'
+#             service_name = 'drive'
+#         case "sheets":
+#             scope_list = ['https://www.googleapis.com/auth/spreadsheets']
+#             version = 'v3'
+#             service_name = 'spreadsheets'
+#         case _:
+#             scope_list = ['https://www.googleapis.com/auth/drive']
+#             version = 'v3'
+#             service_name = 'drive'
 
-    try:
-        cred = service_account.Credentials.from_service_account_file(
-            cred_file, scopes=scope_list
-        )
-        svc = build(service_name, version, credentials=cred)
-        return svc
-    except HttpError as error:
-        return error
+#     try:
+#         cred = service_account.Credentials.from_service_account_file(
+#             cred_file, scopes=scope_list
+#         )
+#         svc = build(service_name, version, credentials=cred)
+#         return svc
+#     except HttpError as error:
+#         return error
 
 
 def initialize_oauth_flow():
